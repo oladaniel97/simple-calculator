@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="/dist/output.css" rel="stylesheet" />
+    <style>
+        button{
+            border-radius: 10px;
+        }
+        #display{
+            height: 4rem;
+            font-size: 24px !important;
+        }
+    </style>
+  </head>
+  <body class="bg-slate-50">
+    <div
+      class="sm m-auto w-96 mt-6 bg-white p-4 border  shadow-2xl rounded-lg"
+    >
+
+      <div
+        class="text-black text-right  p-2 mb-2  border-stone-200 border rounded-xl shadow-inner "
+        id="display"
+      ></div>
+
+            
+    <div class="grid grid-cols-4 gap-3 text-center text-lg font-bold">
+        <button class="bg-blue-300 hover:bg-blue-600 " onclick="calculate('C')">C</button>
+        <button
+          class="bg-blue-300 hover:bg-blue-600 h-16"
+          onclick="calculate('/')"
+        >
+          /
+        </button>
+        <button class="bg-blue-300 hover:bg-blue-600" onclick="calculate('*')">
+          *
+        </button>
+        <button class="bg-blue-300 hover:bg-blue-600" onclick="calculate('-')">
+          -
+        </button>
+        <button
+          class="bg-blue-300 hover:bg-blue-600 h-16"
+          onclick="calculate(1)"
+        >
+          1
+        </button>
+        <button class="bg-blue-300 hover:bg-blue-600" onclick="calculate(2)">
+          2
+        </button>
+        <button class="bg-blue-300 hover:bg-blue-600" onclick="calculate(3)">
+          3
+        </button>
+        <button class="bg-blue-300 hover:bg-blue-600" onclick="calculate('+')">
+          +
+        </button>
+        <button
+          class="bg-blue-300 hover:bg-blue-600 h-16"
+          onclick="calculate(4)"
+        >
+          4
+        </button>
+        <button class="bg-blue-300 hover:bg-blue-600" onclick="calculate(5)">
+          5
+        </button>
+        <button class="bg-blue-300 hover:bg-blue-600" onclick="calculate(6)">
+          6
+        </button>
+        <button
+          class="row-span-2 bg-purple-300 hover:bg-purple-600"
+          onclick="result()"
+        >
+          =
+        </button>
+        <button
+          class="bg-blue-300 hover:bg-blue-600 h-16"
+          onclick="calculate(7)"
+        >
+          7
+        </button>
+        <button class="bg-blue-300 hover:bg-blue-600" onclick="calculate(8)">
+          8
+        </button>
+        <button class="bg-blue-300 hover:bg-blue-600" onclick="calculate(9)">
+          9
+        </button>
+        <button
+          class="bg-blue-300 hover:bg-blue-600 h-16"
+          onclick="calculate(0)"
+        >
+          0
+        </button>
+        <button class="bg-blue-300 hover:bg-blue-600" onclick="calculate('%')">
+          %
+        </button>
+        <button class="bg-blue-300 hover:bg-blue-600" onclick="calculate('.')">
+          .
+        </button>
+        <button class="bg-blue-300 hover:bg-blue-600" onclick="deleted()">
+          DEL
+        </button>
+      </div>
+    </div>
+    <script>
+      let display = document.getElementById("display");
+
+      
+
+      function calculate(num) {
+        switch (num) {
+        case 'C':
+        display.innerText = " ";
+            break;
+      
+        default:
+        display.innerText += num; 
+      } 
+      }
+
+      function result() {
+        try {
+          display.innerText = eval(display.innerText);
+        } catch (error) {
+          display.innerText = "error";
+        }
+      }
+
+      function clear() {
+        display.innerText = " ";
+      }
+
+      function deleted() {
+        display.innerText = display.innerText.slice(0, -1);
+      }
+    </script>
+  </body>
+</html>
