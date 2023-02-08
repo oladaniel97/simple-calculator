@@ -7,28 +7,26 @@
     <title>Document</title>
     <link href="/dist/output.css" rel="stylesheet" />
     <style>
-        button{
-            border-radius: 10px;
-        }
-        #display{
-            height: 4rem;
-            font-size: 24px !important;
-        }
+      button {
+        border-radius: 10px;
+      }
+      #display {
+        height: 4rem;
+        font-size: 24px !important;
+      }
     </style>
   </head>
   <body class="bg-slate-50">
-    <div
-      class="sm m-auto w-96 mt-6 bg-white p-4 border  shadow-2xl rounded-lg"
-    >
-
+    <div class="sm m-auto w-96 mt-6 bg-white p-4 border shadow-2xl rounded-lg">
       <div
-        class="text-black text-right  p-2 mb-2  border-stone-200 border rounded-xl shadow-inner "
+        class="text-black text-right p-2 mb-2 border-stone-200 border rounded-xl shadow-inner"
         id="display"
       ></div>
 
-            
-    <div class="grid grid-cols-4 gap-3 text-center text-lg font-bold">
-        <button class="bg-blue-300 hover:bg-blue-600 " onclick="calculate('C')">C</button>
+      <div class="grid grid-cols-4 gap-3 text-center text-lg font-bold">
+        <button class="bg-blue-300 hover:bg-blue-600" onclick="calculate('C')">
+          C
+        </button>
         <button
           class="bg-blue-300 hover:bg-blue-600 h-16"
           onclick="calculate('/')"
@@ -106,19 +104,16 @@
     <script>
       let display = document.getElementById("display");
 
-      
-
       function calculate(num) {
         switch (num) {
-        case 'C':
-        display.innerText = " ";
+          case "C":
+            display.innerText = " ";
             break;
-      
-        default:
-        display.innerText += num; 
-      } 
-      }
 
+          default:
+            display.innerText += num;
+        }
+      }
 
       function result() {
         try {
